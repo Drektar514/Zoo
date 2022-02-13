@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+
+namespace Zoo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Zoo zoo = new Zoo();
+            bool work = true;
+
+            Console.WriteLine("Добро пожаловать в зоопарк");
+
+            while (work)
+            {
+                Console.WriteLine("Выберите к какому вольеру вы хотите подойти: ");
+                Console.WriteLine("0 - Медведи \n1 - Обезьяны \n2 - Буйволы \n3 - Змеи \n4 - Слоны");
+                zoo.ChooseAviary();
+                Console.ReadKey();
+                Console.Clear();
+            }
+        }
+    }
+ }
