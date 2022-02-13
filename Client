@@ -1,0 +1,22 @@
+using System;
+
+namespace Zoo
+{
+    class Client
+    {
+        public int SellectAviary()
+        {
+            int inputNumber;
+            bool isNumber = Int32.TryParse(Console.ReadLine(), out inputNumber);
+
+            if (isNumber)
+            {
+                return inputNumber;
+            }
+            else
+            {
+                return Int32.MaxValue;
+            }
+        }
+    }
+}
