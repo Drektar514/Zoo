@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+
+namespace Zoo
+{
+    class AviaryCreator
+    {
+        private List<Aviary> _aviaries;
+        private List<Animal> _animals;
+        private Random _random;
+
+        private string[] _animalTypes = new string[] { "Медведь", "Обезьяна", "Буйвол", "Змея", "Слон" };
+        private string[] _animalSex = new string[] { "Самец", "Самка" };
+        private string[] _animalSound = new string[] { "Рёв", "Уаа", "Муу", "Пшшш", "Вууу" };
+
+        private int _minCountAnimal = 3;
+        private int _maxCountAnimal = 10;
+
+        public AviaryCreator()
+        {
+            _random = new Random();
+            _aviaries = new List<Aviary>();
+            Create();
+        }
+
+        public void GetAviary(List<Aviary> aviaries)
+        {
+            foreach (var aviary in _aviaries)
+            {
+                aviaries.Add(aviary);
+            }
+        }
+
+        private void Create()
+        {
+
+            for (int i = 0; i < _animalTypes.Length; i++)
+            {
+                _animals = new List<Animal>();
+                int animalCount = _random.Next(_minCountAnimal, _maxCountAnimal);
+
+                for (int j = 0; j < animalCount; j++)
+                {
+                    _animals.Add(new Animal(_animalTypes[i], _animalSex[_random.Next(0, 2)], _animalSound[i]));
+                }
+
+                _aviaries.Add(new Aviary(_animals));
+            }
+        }
+    }
+}
