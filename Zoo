@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+
+namespace Zoo
+{
+    class Zoo
+    {
+        private AviaryCreator _aviaryCreator;
+        private List<Aviary> _aviaries;
+        private Client _client;
+
+        public Zoo()
+        {
+            _aviaryCreator = new AviaryCreator();
+            _aviaries = new List<Aviary>();
+            _client = new Client();
+            _aviaryCreator.GetAviary(_aviaries);
+        }
+
+        public void ChooseAviary()
+        {
+            int clientSelect = _client.SellectAviary();
+
+            if (clientSelect > _aviaries.Count)
+            {
+                Console.WriteLine("Такого вальера не существует");
+            }
+            else
+            {
+                _aviaries[clientSelect].ShowInfo();
+            }
+
+        }
+    }
+}
