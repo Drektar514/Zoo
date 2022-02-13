@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+
+namespace Zoo
+{
+    class Aviary
+    {
+        private List<Animal> _animals;
+
+        public Aviary(List<Animal> animals)
+        {
+            _animals = animals;
+        }
+
+        public void ShowInfo()
+        {
+            Console.WriteLine($"В этом вольере живут - {_animals.Count} животных ");
+
+            foreach (var animal in _animals)
+            {
+                animal.ShowInfo();
+            }
+        }
+    }
+}
