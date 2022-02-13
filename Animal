@@ -1,0 +1,23 @@
+using System;
+
+namespace Zoo
+{
+    class Animal
+    {
+        public string Type { get; private set; }
+        public string Sex { get; private set; }
+        public string Sound { get; private set; }
+
+        public Animal(string type, string sex, string sound)
+        {
+            Type = type;
+            Sex = sex;
+            Sound = sound;
+        }
+
+        public void ShowInfo()
+        {
+            Console.WriteLine($"{Type}, пол - {Sex}, издаёт звук - {Sound}.");
+        }
+    }
+}
